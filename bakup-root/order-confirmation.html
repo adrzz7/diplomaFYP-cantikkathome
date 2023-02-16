@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <h2>Payment result</h2>
+<div class="payment-result">
+</div>
+
+<script>
+  // Check if we're returning from a redirect.
+  const url = new URL(window.location.href);
+  const paymentIntentClientSecret = url.searchParams.get(
+    "paymentIntentClientSecret"
+  );
+  if (paymentIntentClientSecret) {
+    stripe.retrievePaymentIntent(paymentIntentClientSecret).then(function(result) {
+      const paymentIntent = result.paymentIntent;
+      document.querySelector(".payment-result").textContent = paymentIntent.status;
+    });
+  }
+</script>
+  </body>
+</html>

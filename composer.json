@@ -1,0 +1,12 @@
+{
+    "require": {
+        "stripe/stripe-php": "^7.69",
+        "twilio/sdk": "^6.16",
+        "aftership/aftership-php-sdk": "^5.1",
+        "konekt/pdf-invoice": "^1.7",
+        "eyeson/eyeson-php": "^1.4",
+        "opentok/opentok": "4.4.x",
+        "pusher/pusher-php-server": "^4.1",
+        "mikechip/chatapi": "^2.0"
+    }
+}
